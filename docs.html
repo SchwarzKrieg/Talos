@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TALOS // Documentation</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .panel-glow {
+      box-shadow: 0 0 25px rgba(255,255,255,0.03);
+    }
+
+    .scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #3f3f46;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-zinc-200 font-mono min-h-screen grid-pattern">
+
+  <!-- NAVBAR -->
+  <nav class="border-b border-zinc-900 sticky top-0 bg-black/80 backdrop-blur z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+      <div>
+        <h1 class="text-2xl font-bold tracking-[0.35em] text-zinc-100">
+          TALOS
+        </h1>
+
+        <p class="text-xs text-zinc-500 mt-1">
+          Task Automation, Learning, Observation & Synthesis
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-sm">
+
+        <a href="index.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          HOME
+        </a>
+
+        <a href="console.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          CONSOLE
+        </a>
+
+        <a href="memory.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MEMORY
+        </a>
+
+        <a href="research.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          RESEARCH
+        </a>
+
+        <a href="tasks.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          TASKS
+        </a>
+
+        <a href="monitoring.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MONITORING
+        </a>
+
+        <a href="directives.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DIRECTIVES
+        </a>
+
+        <a href="docs.html" class="px-4 py-2 border border-zinc-800 bg-zinc-950 rounded-xl transition">
+          DOCS
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-14">
+
+    <div class="max-w-4xl">
+
+      <div class="inline-flex items-center gap-2 px-4 py-2 border border-zinc-800 rounded-full bg-zinc-950 text-xs text-zinc-400 mb-6">
+        <div class="w-2 h-2 bg-zinc-400 rounded-full animate-pulse"></div>
+        SYSTEM DOCUMENTATION ARCHIVE
+      </div>
+
+      <h2 class="text-5xl lg:text-7xl font-bold leading-tight text-zinc-100">
+        Technical
+        Documentation
+      </h2>
+
+      <p class="mt-8 text-zinc-400 text-lg leading-relaxed max-w-3xl">
+        TALOS documentation provides structural references for system architecture, module relationships, operational philosophy, deployment workflows, and future subsystem integration.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- SYSTEM OVERVIEW -->
+  <section class="max-w-7xl mx-auto px-6 pb-10">
+
+    <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+      <div class="flex items-center justify-between mb-8">
+
+        <h3 class="text-3xl font-bold text-zinc-100">
+          SYSTEM OVERVIEW
+        </h3>
+
+        <span class="text-xs text-zinc-500">
+          BUILD 0.1
+        </span>
+
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10">
+
+        <div class="space-y-5 text-zinc-400 leading-relaxed">
+
+          <p>
+            TALOS is a modular operational assistance platform designed to support task automation, knowledge synthesis, observational telemetry, and continuity preservation.
+          </p>
+
+          <p>
+            The platform operates under a constrained execution model emphasizing human oversight, modular scalability, and operational clarity.
+          </p>
+
+          <p>
+            Current deployment architecture utilizes a static frontend hosted through GitHub Pages with planned backend workflow orchestration through n8n integration.
+          </p>
+
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl bg-black p-6">
+
+          <div class="space-y-4 text-sm">
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Frontend</span>
+              <span>HTML / TailwindCSS / JS</span>
+            </div>
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Deployment</span>
+              <span>GitHub Pages</span>
+            </div>
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Workflow Layer</span>
+              <span>n8n</span>
+            </div>
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Execution Model</span>
+              <span>Human-Governed</span>
+            </div>
+
+            <div class="flex justify-between">
+              <span class="text-zinc-500">Architecture</span>
+              <span>Modular</span>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULE ARCHITECTURE -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="flex items-center justify-between mb-8">
+
+      <div>
+        <h3 class="text-3xl font-bold text-zinc-100">
+          MODULE ARCHITECTURE
+        </h3>
+
+        <p class="text-zinc-500 mt-2">
+          Current subsystem structure within TALOS operational framework.
+        </p>
+      </div>
+
+      <div class="hidden md:block text-xs tracking-widest text-zinc-600">
+        MODULAR SYSTEM MAP
+      </div>
+
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <div class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">
+          MODULE-01
+        </div>
+
+        <h4 class="text-2xl font-semibold mb-4">
+          Console
+        </h4>
+
+        <p class="text-zinc-400 leading-relaxed text-sm">
+          Primary operational interaction interface handling objective execution, assistant responses, and workflow initiation.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">
+          MODULE-02
+        </div>
+
+        <h4 class="text-2xl font-semibold mb-4">
+          Memory
+        </h4>
+
+        <p class="text-zinc-400 leading-relaxed text-sm">
+          Long-term archival subsystem responsible for contextual persistence, historical indexing, and operational continuity.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">
+          MODULE-03
+        </div>
+
+        <h4 class="text-2xl font-semibold mb-4">
+          Research
+        </h4>
+
+        <p class="text-zinc-400 leading-relaxed text-sm">
+          Intelligence synthesis environment focused on source ingestion, summarization, contextual analysis, and briefing generation.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">
+          MODULE-04
+        </div>
+
+        <h4 class="text-2xl font-semibold mb-4">
+          Tasks
+        </h4>
+
+        <p class="text-zinc-400 leading-relaxed text-sm">
+          Workflow coordination layer responsible for objective tracking, queue prioritization, and execution visibility.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">
+          MODULE-05
+        </div>
+
+        <h4 class="text-2xl font-semibold mb-4">
+          Monitoring
+        </h4>
+
+        <p class="text-zinc-400 leading-relaxed text-sm">
+          Telemetry subsystem responsible for repository observation, system diagnostics, and operational health tracking.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">
+          MODULE-06
+        </div>
+
+        <h4 class="text-2xl font-semibold mb-4">
+          Directives
+        </h4>
+
+        <p class="text-zinc-400 leading-relaxed text-sm">
+          Operational philosophy and governance framework defining execution constraints, authorization rules, and system ethos.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- DEPLOYMENT PIPELINE -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+      <div class="flex items-center justify-between mb-8">
+
+        <h3 class="text-3xl font-bold text-zinc-100">
+          DEPLOYMENT PIPELINE
+        </h3>
+
+        <span class="text-xs text-zinc-500">
+          PROTOTYPE INFRASTRUCTURE
+        </span>
+
+      </div>
+
+      <div class="grid lg:grid-cols-4 gap-6">
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            STAGE-01
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Frontend
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Static operational interface built with HTML, TailwindCSS, and JavaScript modules.
+          </p>
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            STAGE-02
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Repository
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Source control, deployment synchronization, and version tracking through GitHub repositories.
+          </p>
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            STAGE-03
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Workflow Engine
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Planned n8n orchestration layer responsible for AI routing, automation, and operational workflows.
+          </p>
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            STAGE-04
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Future Runtime
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Potential migration toward desktop application architecture with persistent memory and offline operation.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FUTURE DEVELOPMENT -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+        <div class="flex items-center justify-between mb-6">
+
+          <h3 class="text-2xl font-semibold">
+            DEVELOPMENT TARGETS
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            ROADMAP
+          </span>
+
+        </div>
+
+        <ul class="space-y-4 text-sm text-zinc-400">
+
+          <li>• Live webhook integration through n8n</li>
+          <li>• Persistent memory storage systems</li>
+          <li>• Automated research synthesis</li>
+          <li>• Operational telemetry ingestion</li>
+          <li>• Structured workflow orchestration</li>
+          <li>• Desktop application migration</li>
+
+        </ul>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+        <div class="flex items-center justify-between mb-6">
+
+          <h3 class="text-2xl font-semibold">
+            INTERNAL STATEMENT
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            PHILOSOPHY
+          </span>
+
+        </div>
+
+        <blockquote class="text-2xl leading-relaxed text-zinc-200">
+          “Task Automation,
+          Learning,
+          Observation &
+          Synthesis.”
+        </blockquote>
+
+        <p class="mt-6 text-zinc-500 leading-relaxed text-sm">
+          TALOS is designed as a modular cognitive support framework intended to reduce informational overload while preserving operational continuity through structured intelligence assistance.
+        </p>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zinc-900 mt-10">
+
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col lg:flex-row justify-between gap-6 text-sm text-zinc-600">
+
+      <div>
+        TALOS // Documentation Archive
+      </div>
+
+      <div class="flex gap-6">
+        <span>STATUS: ACTIVE</span>
+        <span>BUILD: 0.1</span>
+        <span>DEPLOYMENT: STABLE</span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>

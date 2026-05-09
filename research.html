@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALOS // Research & Synthesis</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .panel-glow {
+      box-shadow: 0 0 25px rgba(255,255,255,0.03);
+    }
+
+    .scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #3f3f46;
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-zinc-200 font-mono min-h-screen grid-pattern">
+
+  <!-- NAVIGATION -->
+  <nav class="border-b border-zinc-900 sticky top-0 bg-black/80 backdrop-blur z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+      <div>
+        <h1 class="text-2xl font-bold tracking-[0.35em] text-zinc-100">
+          TALOS
+        </h1>
+
+        <p class="text-xs text-zinc-500 mt-1">
+          Task Automation, Learning, Observation & Synthesis
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-sm">
+
+        <a href="index.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          HOME
+        </a>
+
+        <a href="console.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          CONSOLE
+        </a>
+
+        <a href="memory.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MEMORY
+        </a>
+
+        <a href="research.html" class="px-4 py-2 border border-zinc-800 rounded-xl bg-zinc-950 transition">
+          RESEARCH
+        </a>
+
+        <a href="tasks.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          TASKS
+        </a>
+
+        <a href="monitoring.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MONITORING
+        </a>
+
+        <a href="directives.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DIRECTIVES
+        </a>
+
+        <a href="docs.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DOCS
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="max-w-7xl mx-auto px-6 pt-16 pb-10">
+
+    <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10">
+
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-2 border border-zinc-800 rounded-full bg-zinc-950 text-xs text-zinc-400 mb-6">
+          <div class="w-2 h-2 bg-zinc-400 rounded-full animate-pulse"></div>
+          SYNTHESIS ENGINE ACTIVE
+        </div>
+
+        <h2 class="text-5xl lg:text-6xl font-bold leading-tight text-zinc-100">
+          Research &
+          Intelligence
+          Synthesis
+        </h2>
+
+        <p class="mt-6 text-zinc-400 max-w-3xl leading-relaxed text-lg">
+          TALOS aggregates fragmented information streams into structured operational knowledge. Research modules prioritize clarity, continuity, contextual indexing, and rapid synthesis.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow lg:w-[380px]">
+
+        <div class="flex items-center justify-between mb-6">
+          <h3 class="text-xl font-semibold">
+            SYNTHESIS STATUS
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            LIVE
+          </span>
+        </div>
+
+        <div class="space-y-5 text-sm">
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Indexed Sources</span>
+            <span>124</span>
+          </div>
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Research Sessions</span>
+            <span>18 Active</span>
+          </div>
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Summary Queue</span>
+            <span>07 Pending</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-zinc-500">Analytical State</span>
+            <span>Stable</span>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN GRID -->
+  <main class="max-w-7xl mx-auto px-6 pb-20 grid lg:grid-cols-3 gap-6">
+
+    <!-- LEFT SIDE -->
+    <section class="lg:col-span-2 space-y-6">
+
+      <!-- RESEARCH INPUT -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+        <div class="flex items-center justify-between mb-5">
+          <h3 class="text-2xl font-semibold">
+            RESEARCH INPUT
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            SOURCE INGESTION
+          </span>
+        </div>
+
+        <textarea
+          id="researchInput"
+          placeholder="Enter articles, notes, reports, URLs, or operational context..."
+          class="w-full h-64 bg-black border border-zinc-800 rounded-2xl p-5 text-zinc-300 resize-none focus:outline-none focus:ring-2 focus:ring-zinc-700"
+        ></textarea>
+
+        <div class="flex flex-wrap gap-4 mt-5">
+
+          <button
+            onclick="runSynthesis()"
+            class="px-6 py-3 rounded-2xl border border-zinc-700 bg-zinc-100 text-black font-semibold hover:bg-zinc-300 transition"
+          >
+            RUN SYNTHESIS
+          </button>
+
+          <button
+            class="px-6 py-3 rounded-2xl border border-zinc-800 bg-zinc-950 hover:bg-zinc-900 transition"
+          >
+            ARCHIVE SOURCE
+          </button>
+
+          <button
+            class="px-6 py-3 rounded-2xl border border-zinc-800 bg-zinc-950 hover:bg-zinc-900 transition"
+          >
+            GENERATE BRIEFING
+          </button>
+
+        </div>
+      </div>
+
+      <!-- SYNTHESIS OUTPUT -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <h3 class="text-2xl font-semibold">
+            SYNTHESIS OUTPUT
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            STRUCTURED ANALYSIS
+          </span>
+
+        </div>
+
+        <div
+          id="synthesisOutput"
+          class="bg-black border border-zinc-800 rounded-2xl p-6 min-h-[320px] whitespace-pre-wrap text-zinc-300 leading-relaxed"
+        >
+Awaiting analytical input.
+        </div>
+
+      </div>
+
+      <!-- SOURCE INDEX -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+        <div class="flex items-center justify-between mb-5">
+
+          <h3 class="text-2xl font-semibold">
+            SOURCE INDEX
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            ACTIVE REFERENCES
+          </span>
+
+        </div>
+
+        <div class="space-y-4">
+
+          <div class="border border-zinc-800 rounded-2xl p-5 bg-black">
+            <div class="flex justify-between items-start gap-4">
+
+              <div>
+                <h4 class="font-semibold text-zinc-100">
+                  Cognitive Load Reduction Models
+                </h4>
+
+                <p class="text-sm text-zinc-500 mt-2 leading-relaxed">
+                  Research regarding operational fatigue, information overload, and intelligent workflow filtering systems.
+                </p>
+              </div>
+
+              <span class="text-xs px-3 py-1 rounded-xl border border-zinc-700 bg-zinc-900">
+                Indexed
+              </span>
+
+            </div>
+          </div>
+
+          <div class="border border-zinc-800 rounded-2xl p-5 bg-black">
+            <div class="flex justify-between items-start gap-4">
+
+              <div>
+                <h4 class="font-semibold text-zinc-100">
+                  Autonomous Workflow Orchestration
+                </h4>
+
+                <p class="text-sm text-zinc-500 mt-2 leading-relaxed">
+                  Comparative analysis of event-driven systems, automation engines, and task delegation frameworks.
+                </p>
+              </div>
+
+              <span class="text-xs px-3 py-1 rounded-xl border border-zinc-700 bg-zinc-900">
+                Processing
+              </span>
+
+            </div>
+          </div>
+
+          <div class="border border-zinc-800 rounded-2xl p-5 bg-black">
+            <div class="flex justify-between items-start gap-4">
+
+              <div>
+                <h4 class="font-semibold text-zinc-100">
+                  Repository Telemetry Structures
+                </h4>
+
+                <p class="text-sm text-zinc-500 mt-2 leading-relaxed">
+                  Monitoring architecture for distributed development systems and collaborative operational tracking.
+                </p>
+              </div>
+
+              <span class="text-xs px-3 py-1 rounded-xl border border-zinc-700 bg-zinc-900">
+                Archived
+              </span>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </section>
+
+    <!-- RIGHT SIDE -->
+    <aside class="space-y-6">
+
+      <!-- ANALYTICS -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+        <h3 class="text-xl font-semibold mb-5">
+          ANALYTICAL TELEMETRY
+        </h3>
+
+        <div class="space-y-5 text-sm">
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-zinc-500">Context Resolution</span>
+              <span>91%</span>
+            </div>
+
+            <div class="w-full bg-zinc-900 rounded-full h-2">
+              <div class="bg-zinc-300 h-2 rounded-full w-[91%]"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-zinc-500">Source Integrity</span>
+              <span>87%</span>
+            </div>
+
+            <div class="w-full bg-zinc-900 rounded-full h-2">
+              <div class="bg-zinc-300 h-2 rounded-full w-[87%]"></div>
+            </div>
+          </div>
+
+          <div>
+            <div class="flex justify-between mb-2">
+              <span class="text-zinc-500">Synthesis Stability</span>
+              <span>96%</span>
+            </div>
+
+            <div class="w-full bg-zinc-900 rounded-full h-2">
+              <div class="bg-zinc-300 h-2 rounded-full w-[96%]"></div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- LIVE LOG -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+        <h3 class="text-xl font-semibold mb-5">
+          LIVE RESEARCH LOG
+        </h3>
+
+        <div class="space-y-3 text-sm text-zinc-400 max-h-[350px] overflow-auto scrollbar">
+
+          <div>[09:14] Source indexing initialized.</div>
+          <div>[09:17] Contextual clustering complete.</div>
+          <div>[09:21] Research archive synchronized.</div>
+          <div>[09:24] Synthesis model loaded.</div>
+          <div>[09:29] Cross-reference validation complete.</div>
+          <div>[09:31] Briefing generation subsystem active.</div>
+
+        </div>
+      </div>
+
+      <!-- DIRECTIVE PANEL -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+        <h3 class="text-xl font-semibold mb-5">
+          RESEARCH DIRECTIVES
+        </h3>
+
+        <ul class="space-y-3 text-sm text-zinc-400 list-disc list-inside">
+
+          <li>Prioritize clarity over volume.</li>
+          <li>Reduce informational fragmentation.</li>
+          <li>Preserve source continuity.</li>
+          <li>Maintain human interpretability.</li>
+          <li>Flag contradictory intelligence.</li>
+
+        </ul>
+      </div>
+
+    </aside>
+  </main>
+
+  <!-- SCRIPT -->
+  <script>
+
+    async function runSynthesis() {
+
+      const input = document.getElementById("researchInput");
+      const output = document.getElementById("synthesisOutput");
+
+      const content = input.value.trim();
+
+      if (!content) {
+        output.innerText = "No research material detected.";
+        return;
+      }
+
+      output.innerText = "TALOS synthesizing research input...";
+
+      try {
+
+        // REPLACE WITH YOUR N8N WEBHOOK LATER
+        await new Promise(resolve => setTimeout(resolve, 2000));
+
+        output.innerText =
+`SYNTHESIS SUMMARY
+
+- Primary topic identified
+- Contextual relevance established
+- Information clusters generated
+- Operational implications detected
+
+TALOS recommends converting this material into a structured briefing for long-term archival and workflow integration.`;
+
+      } catch (error) {
+
+        output.innerText =
+"Research synthesis failed.\n\nBackend connection unavailable.";
+
+      }
+    }
+
+  </script>
+
+</body>
+</html>

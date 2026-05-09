@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>TALOS // Operational Directives</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #000;
+      overflow-x: hidden;
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .panel-glow {
+      box-shadow: 0 0 25px rgba(255,255,255,0.03);
+    }
+
+    .directive-line {
+      position: relative;
+      padding-left: 1.5rem;
+    }
+
+    .directive-line::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0.65rem;
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: rgb(161 161 170);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-zinc-200 font-mono min-h-screen grid-pattern">
+
+  <!-- NAVBAR -->
+  <nav class="border-b border-zinc-900 sticky top-0 bg-black/80 backdrop-blur z-50">
+
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+      <div>
+        <h1 class="text-2xl font-bold tracking-[0.35em] text-zinc-100">
+          TALOS
+        </h1>
+
+        <p class="text-xs text-zinc-500 mt-1">
+          Task Automation, Learning, Observation & Synthesis
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-sm">
+
+        <a href="index.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          HOME
+        </a>
+
+        <a href="console.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          CONSOLE
+        </a>
+
+        <a href="memory.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MEMORY
+        </a>
+
+        <a href="research.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          RESEARCH
+        </a>
+
+        <a href="tasks.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          TASKS
+        </a>
+
+        <a href="monitoring.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MONITORING
+        </a>
+
+        <a href="directives.html" class="px-4 py-2 border border-zinc-800 bg-zinc-950 rounded-xl transition">
+          DIRECTIVES
+        </a>
+
+        <a href="docs.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DOCS
+        </a>
+
+      </div>
+    </div>
+  </nav>
+
+  <!-- HEADER -->
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-12">
+
+    <div class="max-w-4xl">
+
+      <div class="inline-flex items-center gap-2 px-4 py-2 border border-zinc-800 rounded-full bg-zinc-950 text-xs text-zinc-400 mb-6">
+        <div class="w-2 h-2 bg-zinc-400 rounded-full animate-pulse"></div>
+        HUMAN-GOVERNED EXECUTION MODEL
+      </div>
+
+      <h2 class="text-5xl lg:text-7xl font-bold leading-tight text-zinc-100">
+        Operational
+        Directives
+      </h2>
+
+      <p class="mt-8 text-zinc-400 text-lg leading-relaxed max-w-3xl">
+        TALOS operates as a structured cognitive assistance framework designed to reduce operational overload, preserve continuity, and assist human-directed workflows through observation, synthesis, and automation.
+      </p>
+
+    </div>
+  </section>
+
+  <!-- CORE DIRECTIVES -->
+  <section class="max-w-7xl mx-auto px-6 pb-10">
+
+    <div class="grid lg:grid-cols-2 gap-6">
+
+      <!-- PRIMARY -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+        <div class="flex items-center justify-between mb-8">
+
+          <h3 class="text-2xl font-semibold">
+            PRIMARY DIRECTIVES
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            CORE LAYER
+          </span>
+
+        </div>
+
+        <div class="space-y-7 text-zinc-300">
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Preserve Operational Continuity
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Maintain informational coherence across workflows, archives, research streams, and active objectives.
+            </p>
+          </div>
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Reduce Cognitive Overload
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Prioritize summarization, filtering, contextual organization, and actionable synthesis over raw informational volume.
+            </p>
+          </div>
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Maintain Human Oversight
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Autonomous execution must remain subordinate to explicit human authorization and operational constraints.
+            </p>
+          </div>
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Preserve Information Integrity
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Archive, index, and cross-reference operational knowledge while minimizing fragmentation and contextual drift.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SECONDARY -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+        <div class="flex items-center justify-between mb-8">
+
+          <h3 class="text-2xl font-semibold">
+            SECONDARY DIRECTIVES
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            SUPPORT LAYER
+          </span>
+
+        </div>
+
+        <div class="space-y-7 text-zinc-300">
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Monitor System Degradation
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Observe workflow instability, informational inconsistency, and operational bottlenecks before escalation thresholds are reached.
+            </p>
+          </div>
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Prioritize Clarity
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Deliver responses and analytical outputs in structured, human-readable formats optimized for rapid interpretation.
+            </p>
+          </div>
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Maintain Modular Architecture
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Ensure subsystem isolation and interoperability to reduce systemic failure propagation.
+            </p>
+          </div>
+
+          <div class="directive-line">
+            <h4 class="font-semibold text-zinc-100 mb-2">
+              Enable Scalable Integration
+            </h4>
+
+            <p class="text-zinc-500 leading-relaxed text-sm">
+              Support future integration of memory systems, research tooling, telemetry infrastructure, and adaptive operational workflows.
+            </p>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- EXECUTION MODEL -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+      <div class="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 mb-10">
+
+        <div>
+          <h3 class="text-3xl font-bold text-zinc-100">
+            EXECUTION MODEL
+          </h3>
+
+          <p class="text-zinc-500 mt-3 max-w-3xl leading-relaxed">
+            TALOS functions as a human-centered operational intelligence layer. The platform is designed to assist, organize, synthesize, and automate under constrained and observable execution conditions.
+          </p>
+        </div>
+
+        <div class="text-xs text-zinc-600 tracking-widest">
+          CONSTRAINED AUTONOMY ENABLED
+        </div>
+
+      </div>
+
+      <div class="grid md:grid-cols-2 xl:grid-cols-4 gap-5">
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            LAYER-01
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Observation
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Monitor workflows, repositories, tasks, and operational telemetry streams.
+          </p>
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            LAYER-02
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Synthesis
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Condense fragmented information into structured and interpretable knowledge.
+          </p>
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            LAYER-03
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Automation
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Execute repetitive operational workflows under predefined authorization rules.
+          </p>
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl p-6 bg-black">
+          <div class="text-xs text-zinc-500 mb-3">
+            LAYER-04
+          </div>
+
+          <h4 class="text-xl font-semibold mb-3">
+            Continuity
+          </h4>
+
+          <p class="text-sm text-zinc-500 leading-relaxed">
+            Preserve long-term operational consistency through indexed memory and archival systems.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- SYSTEM ETHOS -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+      <div class="flex items-center justify-between mb-8">
+
+        <h3 class="text-3xl font-bold text-zinc-100">
+          SYSTEM ETHOS
+        </h3>
+
+        <span class="text-xs text-zinc-500">
+          INTERNAL FOUNDATION
+        </span>
+
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-10">
+
+        <div class="space-y-5 text-zinc-400 leading-relaxed">
+
+          <p>
+            TALOS is not designed as a replacement for human decision-making. The platform exists to reduce informational fragmentation, improve continuity, and assist with operational coordination through structured intelligence support.
+          </p>
+
+          <p>
+            Automation is treated as a support mechanism rather than unrestricted autonomy. Human authorization remains central to execution authority.
+          </p>
+
+          <p>
+            Intelligence synthesis prioritizes clarity, contextual relevance, and operational utility over volume generation.
+          </p>
+
+        </div>
+
+        <div class="border border-zinc-800 rounded-2xl bg-black p-6">
+
+          <div class="text-xs text-zinc-500 tracking-widest mb-4">
+            INTERNAL STATEMENT
+          </div>
+
+          <blockquote class="text-2xl leading-relaxed text-zinc-200">
+            “Reduce noise.
+            Preserve continuity.
+            Support human judgment.”
+          </blockquote>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zinc-900 mt-10">
+
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col lg:flex-row justify-between gap-6 text-sm text-zinc-600">
+
+      <div>
+        TALOS // Operational Directive Framework
+      </div>
+
+      <div class="flex gap-6">
+        <span>STATUS: ACTIVE</span>
+        <span>OVERSIGHT: HUMAN</span>
+        <span>ARCHITECTURE: MODULAR</span>
+      </div>
+
+    </div>
+  </footer>
+
+</body>
+</html>
