@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALOS // Tasks</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: #000;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-zinc-200 font-mono min-h-screen grid-bg">
+
+  <!-- NAV -->
+  <nav class="border-b border-zinc-900 bg-black/80 backdrop-blur sticky top-0">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+      <div class="font-bold tracking-[0.3em]">TALOS // TASKS</div>
+
+      <div class="flex gap-3 text-sm">
+        <a href="index.html" class="text-zinc-400 hover:text-white">HOME</a>
+        <a href="console.html" class="text-zinc-400 hover:text-white">CONSOLE</a>
+        <a href="memory.html" class="text-zinc-400 hover:text-white">MEMORY</a>
+        <a href="research.html" class="text-zinc-400 hover:text-white">RESEARCH</a>
+        <a href="tasks.html" class="text-white">TASKS</a>
+        <a href="monitoring.html" class="text-zinc-400 hover:text-white">MONITORING</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-6 py-10 space-y-6">
+
+    <!-- HEADER -->
+    <section class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+      <h1 class="text-2xl font-semibold tracking-wide">TASK MANAGEMENT SYSTEM</h1>
+      <p class="text-zinc-500 mt-2">
+        Operational workflow queue for tracking objectives, execution states, and priorities.
+      </p>
+    </section>
+
+    <!-- CREATE TASK -->
+    <section class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+
+      <h2 class="text-lg font-semibold mb-4">CREATE NEW TASK</h2>
+
+      <input
+        id="taskTitle"
+        class="w-full bg-black border border-zinc-800 rounded-2xl p-3 mb-3 focus:outline-none focus:ring-2 focus:ring-zinc-700"
+        placeholder="Task title..."
+      />
+
+      <select
+        id="taskPriority"
+        class="w-full bg-black border border-zinc-800 rounded-2xl p-3 mb-3 text-zinc-300"
+      >
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+        <option>Critical</option>
+      </select>
+
+      <textarea
+        id="taskDesc"
+        class="w-full h-28 bg-black border border-zinc-800 rounded-2xl p-3 focus:outline-none focus:ring-2 focus:ring-zinc-700"
+        placeholder="Task description..."
+      ></textarea>
+
+      <div class="flex justify-end mt-4">
+        <button
+          onclick="createTask()"
+          class="px-6 py-3 border border-zinc-700 rounded-2xl bg-zinc-900 hover:bg-zinc-800"
+        >
+          ADD TASK
+        </button>
+      </div>
+    </section>
+
+    <!-- TASK LIST -->
+    <section class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+
+      <div class="flex justify-between items-center mb-4">
+        <h2 class="text-lg font-semibold">ACTIVE TASK QUEUE</h2>
+        <span class="text-xs text-zinc-500">STATIC DEMO STATE</span>
+      </div>
+
+      <div class="space-y-4">
+
+        <div class="border border-zinc-900 rounded-2xl p-4 bg-black">
+          <div class="flex justify-between items-start gap-4">
+
+            <div>
+              <div class="font-semibold">Initialize Talos Architecture</div>
+              <div class="text-sm text-zinc-500 mt-1">
+                Establish static modular shell across GitHub Pages.
+              </div>
+            </div>
+
+            <span class="text-xs px-3 py-1 border border-zinc-700 rounded-xl bg-zinc-900">
+              Completed
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-zinc-900 rounded-2xl p-4 bg-black">
+          <div class="flex justify-between items-start gap-4">
+
+            <div>
+              <div class="font-semibold">Design Console Interface</div>
+              <div class="text-sm text-zinc-500 mt-1">
+                Build operational input/output workflow surface.
+              </div>
+            </div>
+
+            <span class="text-xs px-3 py-1 border border-zinc-700 rounded-xl bg-zinc-900">
+              In Progress
+            </span>
+          </div>
+        </div>
+
+        <div class="border border-zinc-900 rounded-2xl p-4 bg-black">
+          <div class="flex justify-between items-start gap-4">
+
+            <div>
+              <div class="font-semibold">Connect n8n Backend</div>
+              <div class="text-sm text-zinc-500 mt-1">
+                Enable workflow automation and AI orchestration layer.
+              </div>
+            </div>
+
+            <span class="text-xs px-3 py-1 border border-zinc-700 rounded-xl bg-zinc-900">
+              Pending
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    function createTask() {
+      const title = document.getElementById('taskTitle').value.trim();
+      const priority = document.getElementById('taskPriority').value;
+      const desc = document.getElementById('taskDesc').value.trim();
+
+      if (!title || !desc) return;
+
+      alert('Task created (demo mode). Backend not connected yet.');
+
+      document.getElementById('taskTitle').value = '';
+      document.getElementById('taskDesc').value = '';
+    }
+  </script>
+
+</body>
+</html>

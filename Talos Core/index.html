@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALOS // Operational Intelligence System</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background-color: #000000;
+      overflow-x: hidden;
+    }
+
+    .grid-pattern {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .panel-glow {
+      box-shadow: 0 0 25px rgba(255,255,255,0.03);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-zinc-200 font-mono min-h-screen grid-pattern">
+
+  <!-- NAVBAR -->
+  <nav class="border-b border-zinc-900 sticky top-0 backdrop-blur bg-black/80 z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+      <div>
+        <h1 class="text-2xl font-bold tracking-[0.35em] text-zinc-100">
+          TALOS
+        </h1>
+
+        <p class="text-xs text-zinc-500 mt-1">
+          Persistent Operational Intelligence Framework
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-sm">
+        <a href="index.html" class="px-4 py-2 border border-zinc-800 rounded-xl bg-zinc-950 hover:bg-zinc-900 transition">
+          HOME
+        </a>
+
+        <a href="console.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          CONSOLE
+        </a>
+
+        <a href="memory.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MEMORY
+        </a>
+
+        <a href="research.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          RESEARCH
+        </a>
+
+        <a href="tasks.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          TASKS
+        </a>
+
+        <a href="monitoring.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MONITORING
+        </a>
+
+        <a href="directives.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DIRECTIVES
+        </a>
+
+        <a href="docs.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DOCS
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <section class="max-w-7xl mx-auto px-6 pt-20 pb-14">
+
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+      <div>
+        <div class="inline-flex items-center gap-2 px-4 py-2 border border-zinc-800 rounded-full bg-zinc-950 text-xs text-zinc-400 mb-6">
+          <div class="w-2 h-2 bg-zinc-400 rounded-full animate-pulse"></div>
+          SYSTEM STATUS: ACTIVE
+        </div>
+
+        <h2 class="text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-zinc-100">
+          Operational
+          Intelligence
+          Layer
+        </h2>
+
+        <p class="mt-8 text-zinc-400 text-lg leading-relaxed max-w-2xl">
+          TALOS is a modular operational assistant platform designed for workflow coordination, knowledge retention, research synthesis, and cognitive load reduction.
+        </p>
+
+        <div class="mt-10 flex flex-wrap gap-4">
+          <a href="console.html" class="px-6 py-4 rounded-2xl border border-zinc-700 bg-zinc-100 text-black font-semibold hover:bg-zinc-300 transition">
+            OPEN CONSOLE
+          </a>
+
+          <a href="docs.html" class="px-6 py-4 rounded-2xl border border-zinc-800 bg-zinc-950 hover:bg-zinc-900 transition">
+            VIEW DOCUMENTATION
+          </a>
+        </div>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-8 panel-glow">
+
+        <div class="flex items-center justify-between mb-8">
+          <h3 class="text-xl font-semibold tracking-wide">
+            SYSTEM OVERVIEW
+          </h3>
+
+          <span class="text-xs text-zinc-500">
+            BUILD 0.1
+          </span>
+        </div>
+
+        <div class="space-y-5 text-sm">
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Primary Function</span>
+            <span>Operational Assistance</span>
+          </div>
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Execution State</span>
+            <span class="text-zinc-300">Stable</span>
+          </div>
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Workflow Modules</span>
+            <span>07 Active</span>
+          </div>
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Memory State</span>
+            <span>Synchronized</span>
+          </div>
+
+          <div class="flex justify-between border-b border-zinc-900 pb-3">
+            <span class="text-zinc-500">Authorization Layer</span>
+            <span>Human-Governed</span>
+          </div>
+
+          <div class="flex justify-between">
+            <span class="text-zinc-500">Operational Directive</span>
+            <span>Continuity Preservation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODULES -->
+  <section class="max-w-7xl mx-auto px-6 py-10">
+
+    <div class="flex items-center justify-between mb-8">
+      <div>
+        <h3 class="text-3xl font-bold text-zinc-100">
+          CORE MODULES
+        </h3>
+
+        <p class="text-zinc-500 mt-2">
+          Modular operational subsystems connected through TALOS infrastructure.
+        </p>
+      </div>
+
+      <div class="hidden md:block text-xs text-zinc-600 tracking-widest">
+        MODULAR ARCHITECTURE ENABLED
+      </div>
+    </div>
+
+    <div class="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+
+      <a href="console.html" class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 hover:border-zinc-700 hover:-translate-y-1 transition panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">MODULE-01</div>
+        <h4 class="text-2xl font-semibold mb-4">Console</h4>
+        <p class="text-zinc-400 leading-relaxed">
+          Central command interface for objectives, responses, workflows, and operational interaction.
+        </p>
+      </a>
+
+      <a href="memory.html" class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 hover:border-zinc-700 hover:-translate-y-1 transition panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">MODULE-02</div>
+        <h4 class="text-2xl font-semibold mb-4">Memory Archive</h4>
+        <p class="text-zinc-400 leading-relaxed">
+          Persistent storage layer for historical records, operational context, and indexed knowledge.
+        </p>
+      </a>
+
+      <a href="research.html" class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 hover:border-zinc-700 hover:-translate-y-1 transition panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">MODULE-03</div>
+        <h4 class="text-2xl font-semibold mb-4">Research</h4>
+        <p class="text-zinc-400 leading-relaxed">
+          Intelligence synthesis, document analysis, source indexing, and briefing generation.
+        </p>
+      </a>
+
+      <a href="tasks.html" class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 hover:border-zinc-700 hover:-translate-y-1 transition panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">MODULE-04</div>
+        <h4 class="text-2xl font-semibold mb-4">Tasks</h4>
+        <p class="text-zinc-400 leading-relaxed">
+          Objective queue management, workflow prioritization, and execution tracking.
+        </p>
+      </a>
+
+      <a href="monitoring.html" class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 hover:border-zinc-700 hover:-translate-y-1 transition panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">MODULE-05</div>
+        <h4 class="text-2xl font-semibold mb-4">Monitoring</h4>
+        <p class="text-zinc-400 leading-relaxed">
+          Telemetry observation layer for workflows, repositories, integrations, and system health.
+        </p>
+      </a>
+
+      <a href="directives.html" class="border border-zinc-800 rounded-3xl p-6 bg-zinc-950 hover:border-zinc-700 hover:-translate-y-1 transition panel-glow">
+        <div class="text-xs text-zinc-500 mb-3">MODULE-06</div>
+        <h4 class="text-2xl font-semibold mb-4">Directives</h4>
+        <p class="text-zinc-400 leading-relaxed">
+          Core operational philosophy, authorization rules, and execution constraints.
+        </p>
+      </a>
+    </div>
+  </section>
+
+  <!-- STATUS SECTION -->
+  <section class="max-w-7xl mx-auto px-6 py-16">
+
+    <div class="grid lg:grid-cols-3 gap-6">
+
+      <div class="border border-zinc-800 rounded-3xl p-8 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 tracking-widest mb-4">
+          ACTIVE OPERATIONS
+        </div>
+
+        <div class="text-5xl font-bold text-zinc-100">
+          12
+        </div>
+
+        <p class="text-zinc-500 mt-4 leading-relaxed">
+          Concurrent workflow chains currently tracked by TALOS infrastructure.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl p-8 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 tracking-widest mb-4">
+          MEMORY INDEX
+        </div>
+
+        <div class="text-5xl font-bold text-zinc-100">
+          4.2K
+        </div>
+
+        <p class="text-zinc-500 mt-4 leading-relaxed">
+          Archived operational records and indexed knowledge entries available for retrieval.
+        </p>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl p-8 bg-zinc-950 panel-glow">
+        <div class="text-xs text-zinc-500 tracking-widest mb-4">
+          SYSTEM UPTIME
+        </div>
+
+        <div class="text-5xl font-bold text-zinc-100">
+          99.9%
+        </div>
+
+        <p class="text-zinc-500 mt-4 leading-relaxed">
+          Operational continuity maintained across integrated subsystem architecture.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zinc-900 mt-10">
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col lg:flex-row justify-between gap-6 text-sm text-zinc-600">
+
+      <div>
+        TALOS // Persistent Operational Intelligence System
+      </div>
+
+      <div class="flex gap-6">
+        <span>STATUS: ACTIVE</span>
+        <span>BUILD: 0.1</span>
+        <span>ARCHITECTURE: MODULAR</span>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

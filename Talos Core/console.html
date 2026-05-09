@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALOS // Console</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: #000;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-zinc-200 font-mono grid-bg min-h-screen">
+
+  <!-- NAV -->
+  <nav class="border-b border-zinc-900 bg-black/80 backdrop-blur sticky top-0">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="font-bold tracking-[0.3em]">TALOS // CONSOLE</div>
+
+      <div class="flex gap-3 text-sm">
+        <a href="index.html" class="text-zinc-400 hover:text-white">HOME</a>
+        <a href="console.html" class="text-white">CONSOLE</a>
+        <a href="memory.html" class="text-zinc-400 hover:text-white">MEMORY</a>
+        <a href="research.html" class="text-zinc-400 hover:text-white">RESEARCH</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-6 py-10 grid lg:grid-cols-3 gap-6">
+
+    <!-- INPUT -->
+    <section class="lg:col-span-2 space-y-6">
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+        <h2 class="text-xl font-semibold mb-4">OBJECTIVE TERMINAL</h2>
+
+        <textarea
+          id="objective"
+          class="w-full h-40 bg-black border border-zinc-800 rounded-2xl p-4 focus:outline-none focus:ring-2 focus:ring-zinc-700"
+          placeholder="Enter operational objective..."
+        ></textarea>
+
+        <div class="flex justify-end mt-4">
+          <button onclick="sendObjective()"
+            class="px-6 py-3 border border-zinc-700 rounded-2xl bg-zinc-900 hover:bg-zinc-800">
+            EXECUTE
+          </button>
+        </div>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+        <h2 class="text-xl font-semibold mb-4">TALOS OUTPUT</h2>
+
+        <pre id="output" class="whitespace-pre-wrap text-sm text-zinc-300 min-h-[200px]">
+Awaiting instructions...
+        </pre>
+      </div>
+
+    </section>
+
+    <!-- SIDE PANEL -->
+    <aside class="space-y-6">
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+        <h3 class="font-semibold mb-3">SYSTEM STATE</h3>
+
+        <div class="space-y-2 text-sm text-zinc-400">
+          <div>STATUS: ACTIVE</div>
+          <div>MODE: OPERATIONAL</div>
+          <div>MEMORY: LINKED</div>
+          <div>WORKFLOWS: IDLE</div>
+        </div>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+        <h3 class="font-semibold mb-3">RECENT LOGS</h3>
+
+        <div class="space-y-2 text-xs text-zinc-500">
+          <div>[INIT] Console online</div>
+          <div>[SYNC] Memory connected</div>
+          <div>[NET] Webhook ready</div>
+          <div>[OK] System stable</div>
+        </div>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+        <h3 class="font-semibold mb-3">DIRECTIVES</h3>
+
+        <ul class="text-sm text-zinc-400 list-disc list-inside space-y-2">
+          <li>All operations require human authorization.</li>
+          <li>Minimize cognitive overload.</li>
+          <li>Preserve operational continuity.</li>
+        </ul>
+      </div>
+
+    </aside>
+  </main>
+
+  <script>
+    async function sendObjective() {
+      const input = document.getElementById("objective");
+      const output = document.getElementById("output");
+
+      const objective = input.value.trim();
+
+      if (!objective) {
+        output.textContent = "No objective provided.";
+        return;
+      }
+
+      output.textContent = "Processing through TALOS...";
+
+      try {
+        const res = await fetch("https://YOUR-N8N-ENDPOINT/webhook/talos-objective", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ objective })
+        });
+
+        const data = await res.json();
+
+        output.textContent = data.reply || JSON.stringify(data, null, 2);
+
+      } catch (err) {
+        output.textContent = "ERROR: TALOS backend unreachable.";
+      }
+    }
+  </script>
+
+</body>
+</html>

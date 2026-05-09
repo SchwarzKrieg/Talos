@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TALOS // Monitoring</title>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      background: #000;
+    }
+
+    .grid-bg {
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 40px 40px;
+    }
+
+    .bar {
+      height: 6px;
+      background: #27272a;
+      border-radius: 9999px;
+      overflow: hidden;
+    }
+
+    .bar > div {
+      height: 100%;
+      background: #d4d4d8;
+    }
+  </style>
+</head>
+
+<body class="bg-black text-zinc-200 font-mono min-h-screen grid-bg">
+
+  <!-- NAV -->
+  <nav class="border-b border-zinc-900 bg-black/80 backdrop-blur sticky top-0">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+
+      <div class="font-bold tracking-[0.3em]">TALOS // MONITORING</div>
+
+      <div class="flex gap-3 text-sm">
+        <a href="index.html" class="text-zinc-400 hover:text-white">HOME</a>
+        <a href="console.html" class="text-zinc-400 hover:text-white">CONSOLE</a>
+        <a href="memory.html" class="text-zinc-400 hover:text-white">MEMORY</a>
+        <a href="tasks.html" class="text-zinc-400 hover:text-white">TASKS</a>
+        <a href="monitoring.html" class="text-white">MONITORING</a>
+        <a href="docs.html" class="text-zinc-400 hover:text-white">DOCS</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MAIN -->
+  <main class="max-w-6xl mx-auto px-6 py-10 space-y-6">
+
+    <!-- HEADER -->
+    <section class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+      <h1 class="text-2xl font-semibold tracking-wide">SYSTEM MONITORING</h1>
+      <p class="text-zinc-500 mt-2">
+        Live telemetry layer for operational awareness, workflow health, and subsystem integrity.
+      </p>
+    </section>
+
+    <!-- METRICS -->
+    <section class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-5">
+        <div class="text-xs text-zinc-500">CPU LOAD</div>
+        <div class="text-2xl font-bold mt-2">32%</div>
+        <div class="bar mt-3"><div style="width:32%"></div></div>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-5">
+        <div class="text-xs text-zinc-500">MEMORY USAGE</div>
+        <div class="text-2xl font-bold mt-2">61%</div>
+        <div class="bar mt-3"><div style="width:61%"></div></div>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-5">
+        <div class="text-xs text-zinc-500">ACTIVE WORKFLOWS</div>
+        <div class="text-2xl font-bold mt-2">7</div>
+        <div class="text-xs text-zinc-600 mt-3">2 idle / 5 running</div>
+      </div>
+
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-5">
+        <div class="text-xs text-zinc-500">SYSTEM HEALTH</div>
+        <div class="text-2xl font-bold mt-2">STABLE</div>
+        <div class="text-xs text-zinc-600 mt-3">No anomalies detected</div>
+      </div>
+
+    </section>
+
+    <!-- TELEMETRY + LOGS -->
+    <section class="grid lg:grid-cols-2 gap-6">
+
+      <!-- LOG STREAM -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+        <h2 class="text-lg font-semibold mb-4">EVENT STREAM</h2>
+
+        <div class="space-y-2 text-sm text-zinc-400 max-h-[320px] overflow-auto">
+          <div>[09:41] Workflow engine initialized</div>
+          <div>[09:42] Memory sync completed</div>
+          <div>[09:43] Console heartbeat OK</div>
+          <div>[09:44] Task queue evaluated</div>
+          <div>[09:45] Monitoring subsystem active</div>
+          <div>[09:46] No critical alerts</div>
+        </div>
+      </div>
+
+      <!-- SYSTEM STATUS -->
+      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
+        <h2 class="text-lg font-semibold mb-4">SUBSYSTEM STATUS</h2>
+
+        <div class="space-y-4 text-sm">
+
+          <div>
+            <div class="flex justify-between text-zinc-400">
+              <span>Console</span><span class="text-zinc-200">ONLINE</span>
+            </div>
+            <div class="bar mt-2"><div style="width:100%"></div
