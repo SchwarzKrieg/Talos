@@ -3,140 +3,423 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>TALOS // Console</title>
+
+  <title>TALOS // Operations Console</title>
 
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
     body {
-      background: #000;
+      background-color: #000000;
+      overflow-x: hidden;
     }
 
-    .grid-bg {
+    .grid-pattern {
       background-image:
         linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
         linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
       background-size: 40px 40px;
     }
+
+    .panel-glow {
+      box-shadow: 0 0 25px rgba(255,255,255,0.03);
+    }
+
+    .scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+
+    .scrollbar::-webkit-scrollbar-thumb {
+      background: #3f3f46;
+      border-radius: 9999px;
+    }
+
+    textarea {
+      resize: none;
+    }
+
+    .typing {
+      animation: pulse 1.5s infinite;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.3; }
+      50% { opacity: 1; }
+      100% { opacity: 0.3; }
+    }
   </style>
 </head>
 
-<body class="bg-black text-zinc-200 font-mono grid-bg min-h-screen">
+<body class="bg-black text-zinc-200 font-mono min-h-screen grid-pattern">
 
-  <!-- NAV -->
-  <nav class="border-b border-zinc-900 bg-black/80 backdrop-blur sticky top-0">
-    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
-      <div class="font-bold tracking-[0.3em]">TALOS // CONSOLE</div>
+  <!-- NAVBAR -->
+  <nav class="border-b border-zinc-900 sticky top-0 bg-black/80 backdrop-blur z-50">
 
-      <div class="flex gap-3 text-sm">
-        <a href="index.html" class="text-zinc-400 hover:text-white">HOME</a>
-        <a href="console.html" class="text-white">CONSOLE</a>
-        <a href="memory.html" class="text-zinc-400 hover:text-white">MEMORY</a>
-        <a href="research.html" class="text-zinc-400 hover:text-white">RESEARCH</a>
+    <div class="max-w-7xl mx-auto px-6 py-4 flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+
+      <div>
+        <h1 class="text-2xl font-bold tracking-[0.35em] text-zinc-100">
+          TALOS
+        </h1>
+
+        <p class="text-xs text-zinc-500 mt-1">
+          Task Automation, Learning, Observation & Synthesis
+        </p>
+      </div>
+
+      <div class="flex flex-wrap gap-3 text-sm">
+
+        <a href="index.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          HOME
+        </a>
+
+        <a href="console.html" class="px-4 py-2 border border-zinc-800 bg-zinc-950 rounded-xl transition">
+          CONSOLE
+        </a>
+
+        <a href="memory.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MEMORY
+        </a>
+
+        <a href="research.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          RESEARCH
+        </a>
+
+        <a href="tasks.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          TASKS
+        </a>
+
+        <a href="monitoring.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          MONITORING
+        </a>
+
+        <a href="directives.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DIRECTIVES
+        </a>
+
+        <a href="docs.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+          DOCS
+        </a>
+
       </div>
     </div>
   </nav>
 
   <!-- MAIN -->
-  <main class="max-w-6xl mx-auto px-6 py-10 grid lg:grid-cols-3 gap-6">
+  <section class="max-w-7xl mx-auto px-6 py-10">
 
-    <!-- INPUT -->
-    <section class="lg:col-span-2 space-y-6">
+    <div class="grid lg:grid-cols-3 gap-6">
 
-      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
-        <h2 class="text-xl font-semibold mb-4">OBJECTIVE TERMINAL</h2>
+      <!-- LEFT SIDE -->
+      <div class="lg:col-span-2 space-y-6">
 
-        <textarea
-          id="objective"
-          class="w-full h-40 bg-black border border-zinc-800 rounded-2xl p-4 focus:outline-none focus:ring-2 focus:ring-zinc-700"
-          placeholder="Enter operational objective..."
-        ></textarea>
+        <!-- CONSOLE -->
+        <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
 
-        <div class="flex justify-end mt-4">
-          <button onclick="sendObjective()"
-            class="px-6 py-3 border border-zinc-700 rounded-2xl bg-zinc-900 hover:bg-zinc-800">
-            EXECUTE
-          </button>
+          <div class="flex items-center justify-between mb-6">
+
+            <div>
+              <h2 class="text-2xl font-semibold text-zinc-100">
+                OPERATIONS CONSOLE
+              </h2>
+
+              <p class="text-zinc-500 text-sm mt-2">
+                Human-directed operational interface.
+              </p>
+            </div>
+
+            <div class="text-xs text-zinc-500 tracking-widest">
+              TALOS CORE ONLINE
+            </div>
+
+          </div>
+
+          <textarea
+            id="objectiveInput"
+            placeholder="Enter objective for TALOS..."
+            class="w-full h-48 bg-black border border-zinc-800 rounded-2xl p-5 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-700"
+          ></textarea>
+
+          <div class="flex justify-between items-center mt-5">
+
+            <div class="text-xs text-zinc-600">
+              RESPONSE MODEL: GEMINI 2.0 FLASH
+            </div>
+
+            <button
+              onclick="sendObjective()"
+              class="px-6 py-3 rounded-2xl border border-zinc-700 bg-zinc-100 text-black font-semibold hover:bg-zinc-300 transition"
+            >
+              EXECUTE OBJECTIVE
+            </button>
+
+          </div>
         </div>
-      </div>
 
-      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
-        <h2 class="text-xl font-semibold mb-4">TALOS OUTPUT</h2>
+        <!-- RESPONSE -->
+        <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
 
-        <pre id="output" class="whitespace-pre-wrap text-sm text-zinc-300 min-h-[200px]">
-Awaiting instructions...
-        </pre>
-      </div>
+          <div class="flex items-center justify-between mb-6">
 
-    </section>
+            <div>
+              <h2 class="text-2xl font-semibold text-zinc-100">
+                TALOS RESPONSE
+              </h2>
 
-    <!-- SIDE PANEL -->
-    <aside class="space-y-6">
+              <p class="text-zinc-500 text-sm mt-2">
+                Structured operational output stream.
+              </p>
+            </div>
 
-      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
-        <h3 class="font-semibold mb-3">SYSTEM STATE</h3>
+            <div class="text-xs text-zinc-500 tracking-widest">
+              LIVE OUTPUT
+            </div>
 
-        <div class="space-y-2 text-sm text-zinc-400">
-          <div>STATUS: ACTIVE</div>
-          <div>MODE: OPERATIONAL</div>
-          <div>MEMORY: LINKED</div>
-          <div>WORKFLOWS: IDLE</div>
+          </div>
+
+          <div
+            id="responseBox"
+            class="bg-black border border-zinc-800 rounded-2xl p-5 min-h-[320px] whitespace-pre-wrap text-zinc-300 overflow-auto scrollbar"
+          >
+TALOS awaiting objective.
+          </div>
+
         </div>
+
       </div>
 
-      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
-        <h3 class="font-semibold mb-3">RECENT LOGS</h3>
+      <!-- RIGHT SIDE -->
+      <aside class="space-y-6">
 
-        <div class="space-y-2 text-xs text-zinc-500">
-          <div>[INIT] Console online</div>
-          <div>[SYNC] Memory connected</div>
-          <div>[NET] Webhook ready</div>
-          <div>[OK] System stable</div>
+        <!-- STATUS -->
+        <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+          <div class="flex items-center justify-between mb-6">
+
+            <h3 class="text-xl font-semibold">
+              SYSTEM STATUS
+            </h3>
+
+            <span class="text-xs text-zinc-500">
+              ACTIVE
+            </span>
+
+          </div>
+
+          <div class="space-y-4 text-sm">
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Core State</span>
+              <span>Operational</span>
+            </div>
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Assistant Layer</span>
+              <span>Online</span>
+            </div>
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Reasoning Engine</span>
+              <span>Gemini</span>
+            </div>
+
+            <div class="flex justify-between border-b border-zinc-900 pb-3">
+              <span class="text-zinc-500">Execution Model</span>
+              <span>Human-Governed</span>
+            </div>
+
+            <div class="flex justify-between">
+              <span class="text-zinc-500">Memory State</span>
+              <span>Standby</span>
+            </div>
+
+          </div>
+
         </div>
+
+        <!-- DIRECTIVES -->
+        <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+          <div class="flex items-center justify-between mb-6">
+
+            <h3 class="text-xl font-semibold">
+              PRIMARY DIRECTIVES
+            </h3>
+
+            <span class="text-xs text-zinc-500">
+              CORE
+            </span>
+
+          </div>
+
+          <ul class="space-y-4 text-sm text-zinc-400">
+
+            <li>
+              • Preserve operational continuity
+            </li>
+
+            <li>
+              • Reduce informational overload
+            </li>
+
+            <li>
+              • Organize fragmented workflows
+            </li>
+
+            <li>
+              • Support human decision-making
+            </li>
+
+            <li>
+              • Maintain clarity and synthesis
+            </li>
+
+          </ul>
+
+        </div>
+
+        <!-- SYSTEM LOG -->
+        <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
+
+          <div class="flex items-center justify-between mb-6">
+
+            <h3 class="text-xl font-semibold">
+              SYSTEM LOG
+            </h3>
+
+            <span class="text-xs text-zinc-500">
+              LIVE
+            </span>
+
+          </div>
+
+          <div
+            id="systemLog"
+            class="space-y-3 text-sm text-zinc-500 max-h-[300px] overflow-auto scrollbar"
+          >
+
+            <div>[SYSTEM] TALOS core initialized.</div>
+            <div>[SYSTEM] Cloudflare backend connected.</div>
+            <div>[SYSTEM] Gemini inference layer online.</div>
+            <div>[SYSTEM] Awaiting operational objective.</div>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="border-t border-zinc-900 mt-10">
+
+    <div class="max-w-7xl mx-auto px-6 py-8 flex flex-col lg:flex-row justify-between gap-6 text-sm text-zinc-600">
+
+      <div>
+        TALOS // Operational Assistance Framework
       </div>
 
-      <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6">
-        <h3 class="font-semibold mb-3">DIRECTIVES</h3>
-
-        <ul class="text-sm text-zinc-400 list-disc list-inside space-y-2">
-          <li>All operations require human authorization.</li>
-          <li>Minimize cognitive overload.</li>
-          <li>Preserve operational continuity.</li>
-        </ul>
+      <div class="flex gap-6">
+        <span>STATUS: ACTIVE</span>
+        <span>BUILD: 0.2</span>
+        <span>BACKEND: CLOUDFARE</span>
       </div>
 
-    </aside>
-  </main>
+    </div>
 
+  </footer>
+
+  <!-- SCRIPT -->
   <script>
+
+    const webhookURL = 'https://talos-core.anfangschwarz.workers.dev';
+
     async function sendObjective() {
-      const input = document.getElementById("objective");
-      const output = document.getElementById("output");
+
+      const input = document.getElementById('objectiveInput');
+      const responseBox = document.getElementById('responseBox');
+      const systemLog = document.getElementById('systemLog');
 
       const objective = input.value.trim();
 
       if (!objective) {
-        output.textContent = "No objective provided.";
+
+        responseBox.innerText =
+          'No operational objective detected.';
+
         return;
       }
 
-      output.textContent = "Processing through TALOS...";
+      addLog(`[USER] Objective submitted.`);
+      addLog(`[TALOS] Processing request.`);
+
+      responseBox.innerHTML =
+        '<span class="typing">TALOS processing objective...</span>';
 
       try {
-        const res = await fetch("https://YOUR-N8N-ENDPOINT/webhook/talos-objective", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ objective })
+
+        const response = await fetch(webhookURL, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            objective: objective
+          })
         });
 
-        const data = await res.json();
+        const data = await response.json();
 
-        output.textContent = data.reply || JSON.stringify(data, null, 2);
+        if (data.reply) {
 
-      } catch (err) {
-        output.textContent = "ERROR: TALOS backend unreachable.";
+          responseBox.innerText = data.reply;
+
+          addLog(`[TALOS] Response generated successfully.`);
+
+        } else if (data.error) {
+
+          responseBox.innerText =
+            'Backend Error:\n\n' + data.error;
+
+          addLog(`[ERROR] Backend returned an error.`);
+
+        } else {
+
+          responseBox.innerText =
+            'Unknown response structure detected.';
+
+          addLog(`[WARNING] Unknown response format.`);
+
+        }
+
+      } catch (error) {
+
+        console.error(error);
+
+        responseBox.innerText =
+          'Connection failure.\n\nUnable to reach TALOS backend.';
+
+        addLog(`[ERROR] Connection failure.`);
+
       }
     }
+
+    function addLog(message) {
+
+      const systemLog = document.getElementById('systemLog');
+
+      const logEntry = document.createElement('div');
+
+      const time = new Date().toLocaleTimeString();
+
+      logEntry.textContent = `[${time}] ${message}`;
+
+      systemLog.prepend(logEntry);
+    }
+
   </script>
 
 </body>
