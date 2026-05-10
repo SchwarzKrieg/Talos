@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
   <title>TALOS // Operations Console</title>
 
@@ -39,7 +39,7 @@
     }
 
     .typing {
-      animation: pulse 1.5s infinite;
+      animation: pulse 1.2s infinite;
     }
 
     @keyframes pulse {
@@ -69,35 +69,43 @@
 
       <div class="flex flex-wrap gap-3 text-sm">
 
-        <a href="index.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+        <a href="index.html"
+          class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
           HOME
         </a>
 
-        <a href="console.html" class="px-4 py-2 border border-zinc-800 bg-zinc-950 rounded-xl transition">
+        <a href="console.html"
+          class="px-4 py-2 border border-zinc-800 bg-zinc-950 rounded-xl transition">
           CONSOLE
         </a>
 
-        <a href="memory.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+        <a href="memory.html"
+          class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
           MEMORY
         </a>
 
-        <a href="research.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+        <a href="research.html"
+          class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
           RESEARCH
         </a>
 
-        <a href="tasks.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+        <a href="tasks.html"
+          class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
           TASKS
         </a>
 
-        <a href="monitoring.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+        <a href="monitoring.html"
+          class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
           MONITORING
         </a>
 
-        <a href="directives.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+        <a href="directives.html"
+          class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
           DIRECTIVES
         </a>
 
-        <a href="docs.html" class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
+        <a href="docs.html"
+          class="px-4 py-2 border border-zinc-900 rounded-xl hover:bg-zinc-950 transition">
           DOCS
         </a>
 
@@ -106,14 +114,14 @@
   </nav>
 
   <!-- MAIN -->
-  <section class="max-w-7xl mx-auto px-6 py-10">
+  <main class="max-w-7xl mx-auto px-6 py-10">
 
     <div class="grid lg:grid-cols-3 gap-6">
 
       <!-- LEFT SIDE -->
-      <div class="lg:col-span-2 space-y-6">
+      <section class="lg:col-span-2 space-y-6">
 
-        <!-- CONSOLE -->
+        <!-- OBJECTIVE INPUT -->
         <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
 
           <div class="flex items-center justify-between mb-6">
@@ -123,8 +131,8 @@
                 OPERATIONS CONSOLE
               </h2>
 
-              <p class="text-zinc-500 text-sm mt-2">
-                Human-directed operational interface.
+              <p class="text-sm text-zinc-500 mt-2">
+                Human-authorized operational interface.
               </p>
             </div>
 
@@ -136,14 +144,14 @@
 
           <textarea
             id="objectiveInput"
-            placeholder="Enter objective for TALOS..."
-            class="w-full h-48 bg-black border border-zinc-800 rounded-2xl p-5 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-700"
+            placeholder="Enter operational objective..."
+            class="w-full h-52 bg-black border border-zinc-800 rounded-2xl p-5 text-zinc-200 focus:outline-none focus:ring-2 focus:ring-zinc-700"
           ></textarea>
 
-          <div class="flex justify-between items-center mt-5">
+          <div class="flex items-center justify-between mt-5">
 
             <div class="text-xs text-zinc-600">
-              RESPONSE MODEL: GEMINI 2.0 FLASH
+              MODEL: GEMINI 1.5 FLASH
             </div>
 
             <button
@@ -166,13 +174,13 @@
                 TALOS RESPONSE
               </h2>
 
-              <p class="text-zinc-500 text-sm mt-2">
-                Structured operational output stream.
+              <p class="text-sm text-zinc-500 mt-2">
+                Live structured response stream.
               </p>
             </div>
 
             <div class="text-xs text-zinc-500 tracking-widest">
-              LIVE OUTPUT
+              OUTPUT STREAM
             </div>
 
           </div>
@@ -186,7 +194,7 @@ TALOS awaiting objective.
 
         </div>
 
-      </div>
+      </section>
 
       <!-- RIGHT SIDE -->
       <aside class="space-y-6">
@@ -214,12 +222,12 @@ TALOS awaiting objective.
             </div>
 
             <div class="flex justify-between border-b border-zinc-900 pb-3">
-              <span class="text-zinc-500">Assistant Layer</span>
-              <span>Online</span>
+              <span class="text-zinc-500">Backend</span>
+              <span>Cloudflare</span>
             </div>
 
             <div class="flex justify-between border-b border-zinc-900 pb-3">
-              <span class="text-zinc-500">Reasoning Engine</span>
+              <span class="text-zinc-500">Inference Layer</span>
               <span>Gemini</span>
             </div>
 
@@ -254,31 +262,17 @@ TALOS awaiting objective.
 
           <ul class="space-y-4 text-sm text-zinc-400">
 
-            <li>
-              • Preserve operational continuity
-            </li>
-
-            <li>
-              • Reduce informational overload
-            </li>
-
-            <li>
-              • Organize fragmented workflows
-            </li>
-
-            <li>
-              • Support human decision-making
-            </li>
-
-            <li>
-              • Maintain clarity and synthesis
-            </li>
+            <li>• Preserve operational continuity</li>
+            <li>• Reduce informational overload</li>
+            <li>• Organize fragmented workflows</li>
+            <li>• Support human decision-making</li>
+            <li>• Maintain analytical clarity</li>
 
           </ul>
 
         </div>
 
-        <!-- SYSTEM LOG -->
+        <!-- LOGS -->
         <div class="border border-zinc-800 rounded-3xl bg-zinc-950 p-6 panel-glow">
 
           <div class="flex items-center justify-between mb-6">
@@ -298,9 +292,8 @@ TALOS awaiting objective.
             class="space-y-3 text-sm text-zinc-500 max-h-[300px] overflow-auto scrollbar"
           >
 
-            <div>[SYSTEM] TALOS core initialized.</div>
-            <div>[SYSTEM] Cloudflare backend connected.</div>
-            <div>[SYSTEM] Gemini inference layer online.</div>
+            <div>[SYSTEM] TALOS initialized.</div>
+            <div>[SYSTEM] Backend connection established.</div>
             <div>[SYSTEM] Awaiting operational objective.</div>
 
           </div>
@@ -311,7 +304,7 @@ TALOS awaiting objective.
 
     </div>
 
-  </section>
+  </main>
 
   <!-- FOOTER -->
   <footer class="border-t border-zinc-900 mt-10">
@@ -325,7 +318,7 @@ TALOS awaiting objective.
       <div class="flex gap-6">
         <span>STATUS: ACTIVE</span>
         <span>BUILD: 0.2</span>
-        <span>BACKEND: CLOUDFARE</span>
+        <span>ARCHITECTURE: MODULAR</span>
       </div>
 
     </div>
@@ -335,15 +328,19 @@ TALOS awaiting objective.
   <!-- SCRIPT -->
   <script>
 
-    const webhookURL = 'https://talos-core.anfangschwarz.workers.dev';
+    const webhookURL =
+      'https://talos-core.anfangschwarz.workers.dev';
 
     async function sendObjective() {
 
-      const input = document.getElementById('objectiveInput');
-      const responseBox = document.getElementById('responseBox');
-      const systemLog = document.getElementById('systemLog');
+      const input =
+        document.getElementById('objectiveInput');
 
-      const objective = input.value.trim();
+      const responseBox =
+        document.getElementById('responseBox');
+
+      const objective =
+        input.value.trim();
 
       if (!objective) {
 
@@ -353,8 +350,7 @@ TALOS awaiting objective.
         return;
       }
 
-      addLog(`[USER] Objective submitted.`);
-      addLog(`[TALOS] Processing request.`);
+      addLog('[USER] Objective submitted.');
 
       responseBox.innerHTML =
         '<span class="typing">TALOS processing objective...</span>';
@@ -373,27 +369,11 @@ TALOS awaiting objective.
 
         const data = await response.json();
 
-        if (data.reply) {
+        // DEBUG MODE
+        responseBox.innerText =
+          JSON.stringify(data, null, 2);
 
-          responseBox.innerText = data.reply;
-
-          addLog(`[TALOS] Response generated successfully.`);
-
-        } else if (data.error) {
-
-          responseBox.innerText =
-            'Backend Error:\n\n' + data.error;
-
-          addLog(`[ERROR] Backend returned an error.`);
-
-        } else {
-
-          responseBox.innerText =
-            'Unknown response structure detected.';
-
-          addLog(`[WARNING] Unknown response format.`);
-
-        }
+        addLog('[TALOS] Backend response received.');
 
       } catch (error) {
 
@@ -402,20 +382,23 @@ TALOS awaiting objective.
         responseBox.innerText =
           'Connection failure.\n\nUnable to reach TALOS backend.';
 
-        addLog(`[ERROR] Connection failure.`);
-
+        addLog('[ERROR] Backend connection failed.');
       }
     }
 
     function addLog(message) {
 
-      const systemLog = document.getElementById('systemLog');
+      const systemLog =
+        document.getElementById('systemLog');
 
-      const logEntry = document.createElement('div');
+      const logEntry =
+        document.createElement('div');
 
-      const time = new Date().toLocaleTimeString();
+      const time =
+        new Date().toLocaleTimeString();
 
-      logEntry.textContent = `[${time}] ${message}`;
+      logEntry.textContent =
+        `[${time}] ${message}`;
 
       systemLog.prepend(logEntry);
     }
